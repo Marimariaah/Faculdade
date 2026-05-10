@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Docinho - Sistema de Vendas de Doces</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #A9CEF4;
+        }
+        
+        .container {
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #A9CEF4, #7EA0B7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #7EA0B7;
+            margin-bottom: 2rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #A9CEF4, #7EA0B7);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 1rem 3rem rgba(169, 206, 244, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meu Docinho</h1>
+        <p>Sistema Completo de Vendas de Doces</p>
+        <a href="./pages/login.html" class="button">Acessar Sistema</a>
+    </div>
+    
+    <script>
+        // Redirecionar automaticamente em 1 segundo
+        setTimeout(() => {
+            window.location.href = './pages/login.html';
+        }, 3000);
+    </script>
+</body>
+</html>

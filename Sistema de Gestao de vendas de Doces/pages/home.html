@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Docinho - Dashboard</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- ========== SIDEBAR ESQUERDA ========== -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <h2>Meu Docinho</h2>
+            </div>
+
+            <!-- Menu de Navegação -->
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link" data-section="home">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="orders">
+                            <span class="nav-icon">📦</span>
+                            <span class="nav-label">Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="cart">
+                            <span class="nav-icon">🛒</span>
+                            <span class="nav-label">Carrinho</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="favorites">
+                            <span class="nav-icon">❤️</span>
+                            <span class="nav-label">Favoritos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="categories">
+                            <span class="nav-icon">🏷️</span>
+                            <span class="nav-label">Categorias</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="promotions">
+                            <span class="nav-icon">🎁</span>
+                            <span class="nav-label">Promoções</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="history">
+                            <span class="nav-icon">⏰</span>
+                            <span class="nav-label">Histórico</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Separador -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Card de Promoção -->
+            <div class="sidebar-promo">
+                <div class="promo-icon">🚚</div>
+                <h4>Frete Grátis</h4>
+                <p>Acima de R$ 80</p>
+            </div>
+
+            <!-- Botão Sair -->
+            <button class="btn-logout" id="logoutBtn">
+                <span class="nav-icon">🚪</span>
+                <span>Sair</span>
+            </button>
+        </aside>
+
+        <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+        <main class="main-content">
+            <!-- ========== HEADER SUPERIOR ========== -->
+            <header class="top-header">
+                <!-- Pesquisa -->
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput" 
+                        placeholder="Procure seus doces favoritos..."
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <!-- Ações do Header -->
+                <div class="header-actions">
+                    <button class="btn-icon" id="notificationBtn">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <button class="btn-icon" id="cartIconBtn">
+                        <span>🛒</span>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+
+                    <div class="user-avatar" id="userAvatar">
+                        <span id="userInitial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== ÁREA CENTRAL ========== -->
+            <section class="content-area">
+                <!-- Título -->
+                <div class="section-header">
+                    <h1>🍰 Doces em Destaque</h1>
+                </div>
+
+                <!-- Filtros e Ordenação -->
+                <div class="filters-container">
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-filter="todos">
+                            Todos
+                        </button>
+                        <button class="filter-pill" data-filter="bolos">
+                            Bolos
+                        </button>
+                        <button class="filter-pill" data-filter="docinhos">
+                            Docinhos
+                        </button>
+                        <button class="filter-pill" data-filter="cupcakes">
+                            Cupcakes
+                        </button>
+                        <button class="filter-pill" data-filter="trufas">
+                            Trufas
+                        </button>
+                        <button class="filter-pill" data-filter="beijinhos">
+                            Beijiinhos
+                        </button>
+                    </div>
+
+                    <!-- Seletor de Ordenação -->
+                    <div class="sort-container">
+                        <select id="sortSelect" class="sort-select">
+                            <option value="popular">Mais Vendidos</option>
+                            <option value="price-low">Menor Preço</option>
+                            <option value="price-high">Maior Preço</option>
+                            <option value="newest">Mais Recentes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grid de Produtos -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Produtos serão inseridos aqui via JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- ========== CARRINHO LATERAL DIREITO ========== -->
+        <aside class="cart-sidebar">
+            <!-- Header do Carrinho -->
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <button class="btn-close-cart" id="closeCartBtn">✕</button>
+            </div>
+
+            <!-- Conteúdo do Carrinho -->
+            <div class="cart-content">
+                <!-- Items do Carrinho -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Items serão inseridos aqui via JavaScript -->
+                </div>
+
+                <!-- Mensagem de Carrinho Vazio -->
+                <div class="cart-empty" id="cartEmpty">
+                    <div class="empty-icon">🛒</div>
+                    <p>Seu carrinho está vazio</p>
+                    <small>Escolha um doce para começar!</small>
+                </div>
+            </div>
+
+            <!-- Resumo do Carrinho -->
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Entrega</span>
+                    <span id="delivery">R$ 0,00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+            </div>
+
+            <!-- Botão Finalizar Pedido -->
+            <button class="btn-checkout" id="checkoutBtn">
+                🚀 Finalizar Pedido
+            </button>
+
+            <!-- Botão Ver Carrinho -->
+            <button class="btn-view-cart" id="viewCartBtn">
+                Ver Meu Carrinho
+            </button>
+
+            <!-- Selo de Compra Segura -->
+            <div class="security-badge">
+                <span class="badge-icon">🔒</span>
+                <span class="badge-text">Compra 100% Segura</span>
+            </div>
+        </aside>
+
+        <!-- Overlay do Carrinho (Mobile) -->
+        <div class="cart-overlay" id="cartOverlay"></div>
+
+        <!-- Botão de Abrir Carrinho (Mobile) -->
+        <button class="btn-cart-mobile" id="cartMobileBtn">
+            🛒
+            <span class="cart-badge-mobile" id="cartBadgeMobile">0</span>
+        </button>
+    </div>
+
+    <script src="../js/home.js"></script>
+</body>
+</html>

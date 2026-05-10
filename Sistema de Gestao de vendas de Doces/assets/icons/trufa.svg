@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="trufaGradient" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3C1B0A;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <!-- Trufa (esfera) -->
+  <circle cx="100" cy="100" r="65" fill="url(#trufaGradient)" />
+  <!-- Brilho -->
+  <circle cx="70" cy="70" r="25" fill="#A0522D" opacity="0.7" />
+  <!-- Cobertura com relevos -->
+  <circle cx="85" cy="85" r="3" fill="#2C1507" />
+  <circle cx="110" cy="90" r="2" fill="#2C1507" />
+  <circle cx="100" cy="130" r="3" fill="#2C1507" />
+  <circle cx="130" cy="105" r="2" fill="#2C1507" />
+  <!-- Pó de chocolate -->
+  <circle cx="75" cy="125" r="1" fill="#5C4033" opacity="0.8" />
+  <circle cx="115" cy="130" r="1" fill="#5C4033" opacity="0.8" />
+</svg>

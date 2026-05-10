@@ -1,0 +1,530 @@
+/* ========================================
+   LOGIN PAGE - ESTILOS PRINCIPAIS
+   ======================================== */
+
+:root {
+    /* Paleta de Cores */
+    --color-primary-dark: #000000;
+    --color-primary-light: #A9CEF4;
+    --color-secondary-medium: #7EA0B7;
+    --color-dark-bluish: #36494E;
+    --color-bluish-gray: #597081;
+    
+    /* Efeitos e Sombras */
+    --shadow-light: 0 0.5rem 2rem rgba(169, 206, 244, 0.1);
+    --shadow-medium: 0 1rem 3rem rgba(169, 206, 244, 0.15);
+    --shadow-dark: 0 2rem 5rem rgba(0, 0, 0, 0.3);
+    
+    /* Transições */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s ease;
+}
+
+/* ========================================
+   RESET E CONFIGURAÇÃO GLOBAL
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* ========================================
+   LADO ESQUERDO - ILUSTRAÇÃO
+   ======================================== */
+
+.login-illustration {
+    display: none;
+    flex: 1;
+    background: linear-gradient(135deg, var(--color-dark-bluish) 0%, var(--color-bluish-gray) 100%);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Desktop - Mostrar ilustração */
+@media (min-width: 64rem) {
+    .login-illustration {
+        display: flex;
+    }
+}
+
+.illustration-content {
+    position: flex;
+    width: 100%;
+    max-width: 40rem;
+    text-align: center;
+}
+
+.illustration-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+
+
+.illustration-text {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+    color: var(--color-primary-light);
+}
+
+/* Animação de flutuação */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1.5rem);
+    }
+}
+
+/* ========================================
+   LADO DIREITO - FORMULÁRIO
+   ======================================== */
+
+.login-form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--color-primary-dark);
+    overflow-y: auto;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 25rem;
+}
+
+/* ========================================
+   LOGO E TÍTULOS
+   ======================================== */
+
+.logo {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.05em;
+}
+
+.welcome-section {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-light);
+}
+
+.welcome-section p {
+    font-size: 0.95rem;
+    color: var(--color-bluish-gray);
+    line-height: 1.6;
+}
+
+/* ========================================
+   FORMULÁRIO - GRUPOS
+   ======================================== */
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    background: rgba(169, 206, 244, 0.05);
+    border: 0.15rem solid rgba(169, 206, 244, 0.1);
+    border-radius: 0.5rem;
+    color: var(--color-primary-light);
+    transition: var(--transition-smooth);
+    font-family: inherit;
+}
+
+.form-group input::placeholder {
+    color: rgba(169, 206, 244, 0.4);
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(169, 206, 244, 0.1);
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 1rem rgba(169, 206, 244, 0.2);
+}
+
+/* ========================================
+   CAMPO DE SENHA COM TOGGLE
+   ======================================== */
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--color-bluish-gray);
+    transition: var(--transition-fast);
+    padding: 0.5rem;
+}
+
+.toggle-password:hover {
+    color: var(--color-primary-light);
+    transform: scale(1.1);
+}
+
+/* ========================================
+   MENSAGENS DE ERRO
+   ======================================== */
+
+.error-message {
+    display: none;
+    font-size: 0.825rem;
+    color: #FF6B6B;
+    margin-top: 0.5rem;
+    animation: slideIn 0.3s ease;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.error-alert {
+    display: none;
+    background: rgba(255, 107, 107, 0.1);
+    border: 0.1rem solid #FF6B6B;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #FF6B6B;
+    font-size: 0.95rem;
+    animation: slideIn 0.3s ease;
+}
+
+.error-alert.show {
+    display: block;
+}
+
+/* ========================================
+   MENSAGEM DE SUCESSO
+   ======================================== */
+
+.success-message {
+    display: none;
+    background: rgba(76, 175, 80, 0.1);
+    border: 0.1rem solid #4CAF50;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: #4CAF50;
+    font-size: 0.95rem;
+    animation: slideIn 0.3s ease;
+    text-align: center;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+
+.btn-login {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-medium));
+    color: var(--color-primary-dark);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-login:hover:not(:disabled) {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-login:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-login:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Loader no botão */
+.loader {
+    display: none;
+    width: 1rem;
+    height: 1rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.2);
+    border-top-color: var(--color-primary-dark);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loader.show {
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Botão Criar Conta */
+.btn-signup {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+    color: var(--color-primary-light);
+    border: 0.15rem solid var(--color-primary-light);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-signup:hover {
+    background: rgba(169, 206, 244, 0.1);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-signup:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   LINKS ADICIONAIS
+   ======================================== */
+
+.login-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.link-forgot-password {
+    font-size: 0.9rem;
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    display: inline-block;
+}
+
+.link-forgot-password:hover {
+    color: var(--color-secondary-medium);
+    text-decoration: underline;
+}
+
+/* ========================================
+   DIVISOR
+   ======================================== */
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1.5rem;
+    color: var(--color-bluish-gray);
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 0.1rem;
+    background: rgba(169, 206, 244, 0.1);
+}
+
+.divider span {
+    padding: 0 1rem;
+}
+
+/* ========================================
+   ANIMAÇÕES GERAIS
+   ======================================== */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 63.99rem) {
+    .login-form-container {
+        padding: 1.5rem;
+    }
+
+    .login-form {
+        max-width: 100%;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 29.99rem) {
+    .login-container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .login-form-container {
+        padding: 1rem;
+    }
+
+    .login-form {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.75rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .welcome-section p {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-login,
+    .btn-signup {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    .illustration-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Muito pequeno (< 320px) */
+@media (max-width: 19.99rem) {
+    html {
+        font-size: 14px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.1rem;
+    }
+}

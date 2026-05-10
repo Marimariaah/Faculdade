@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Docinho - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Lado Esquerdo - Ilustração (Desktop) -->
+        <div class="login-illustration">
+            <div class="illustration-content">
+                <img src="../assets/images/fundo.jpg" alt="Ilustração de Doces" class="illustration-image">
+                <h2 class="illustration-text">Bem-vindo ao Meu Docinho</h2>
+            </div>
+        </div>
+
+        <!-- Lado Direito - Formulário -->
+        <div class="login-form-container">
+            <div class="login-form">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1>Meu Docinho</h1>
+                </div>
+
+                <!-- Título de Boas-vindas -->
+                <div class="welcome-section">
+                    <h2>Bem-vindo de volta!</h2>
+                    <p>Faça login para continuar degustando nossos doces premium</p>
+                </div>
+
+                <!-- Formulário -->
+                <form id="loginForm" novalidate>
+                    <!-- Campo Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="seu@email.com"
+                            required
+                        >
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- Campo Senha -->
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="••••••••"
+                                required
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <!-- Botão Entrar -->
+                    <button type="submit" class="btn-login">
+                        <span>Entrar</span>
+                        <span class="loader" id="loader"></span>
+                    </button>
+                </form>
+
+                <!-- Links Adicionais -->
+                <div class="login-links">
+                    <a href="#" class="link-forgot-password">Esqueci minha senha</a>
+                </div>
+
+                <!-- Separador -->
+                <div class="divider">
+                    <span>Novo por aqui?</span>
+                </div>
+
+                <!-- Botão Criar Conta -->
+                <button type="button" class="btn-signup" id="signupBtn">
+                    Criar conta
+                </button>
+
+                <!-- Mensagem de Sucesso -->
+                <div class="success-message" id="successMessage">
+                    ✓ Login realizado com sucesso! Redirecionando...
+                </div>
+
+                <!-- Mensagem de Erro Geral -->
+                <div class="error-alert" id="errorAlert"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="macaronGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFB6E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <!-- Macaron superior -->
+  <ellipse cx="100" cy="70" rx="45" ry="35" fill="url(#macaronGradient)" />
+  <!-- Macaron inferior -->
+  <ellipse cx="100" cy="130" rx="45" ry="35" fill="url(#macaronGradient)" />
+  <!-- Recheio no meio -->
+  <ellipse cx="100" cy="100" rx="50" ry="8" fill="#FFD700" />
+  <!-- Brilho superior -->
+  <ellipse cx="75" cy="55" rx="20" ry="15" fill="#FFCCCB" opacity="0.6" />
+  <!-- Brilho inferior -->
+  <ellipse cx="75" cy="145" rx="20" ry="15" fill="#FFCCCB" opacity="0.4" />
+</svg>
